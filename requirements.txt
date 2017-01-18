@@ -8,3 +8,12 @@ kombu==3.0.37
 psycopg2==2.5.3
 pytz==2016.10
 redis==2.10.5
+djangorestframework-jwt==1.8.0
+dj-database-url==0.4.1
+gunicorn==19.6.0
+PyJWT==1.4.1
+requests==2.10.0
+django-nomad-base-accounts==2.3.10
+django-extensions==1.6.7
+django-crispy-forms==1.6.0
+django-storages==1.5.0

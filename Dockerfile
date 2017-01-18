@@ -1,4 +1,4 @@
-# use base python image with python 3.6
+# use base python image with python 3.4
 FROM python:3.4
 
 # add requirements.txt to the image
@@ -8,7 +8,7 @@ ADD requirements.txt /app/requirements.txt
 WORKDIR /app/
 
 # install python dependencies
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # create unprivileged user
 RUN adduser --disabled-password --gecos '' myuser

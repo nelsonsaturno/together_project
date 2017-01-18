@@ -26,7 +26,18 @@ SECRET_KEY = 'skhy4@5mmms5k^(ihkiq^%+y$d=7x=wlsmwbh#wxpjh^2&!n26'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 TEMPLATE_DEBUG = True
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0']
+
+# Authentication
+AUTH_USER_MODEL = 'accounts.User'
+AUTHENTICATION_BACKENDS = (
+    'base_accounts.auth_backend.EmailBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_ERROR_URL = '/'
+LOGOUT_URL = '/accounts/logout/'
 
 
 # Application definition
@@ -41,6 +52,7 @@ INSTALLED_APPS = [
     'together_project',
     'django.contrib.sites',
     'django.contrib.staticfiles',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -89,8 +101,8 @@ DATABASES = {
         'NAME': os.environ.get('DB_ENV_DB', 'postgres'),
         'USER': os.environ.get('DB_ENV_POSTGRES_USER', 'postgres'),
         'PASSWORD': os.environ.get('DB_ENV_POSTGRES_PASSWORD', 'postgres'),
-        'HOST': os.environ.get('DB_PORT_5432_TCP_ADDR', 'db'),
-        'PORT': os.environ.get('DB_PORT_5432_TCP_PORT', ''),
+        'HOST': 'localhost',
+        'PORT': 5432,
     },
 }
 

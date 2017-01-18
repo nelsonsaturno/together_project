@@ -4,7 +4,7 @@ services:
   # PostgreSQL database
   db:
     image: postgres:9.3
-    hostname: db
+    hostname: localhost
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
